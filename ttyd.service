@@ -1,0 +1,12 @@
+[Unit]
+Description=Share terminal over the web
+After = network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=60s
+ExecStart=/usr/local/bin/ttyd --cwd / --writable -i lo -t 'theme={"red":"#AF0000","black":"#EEEEEE","blue":"#005FAF","selectionInactiveBackground":"#444444","foreground":"#444444","brightBlack":"#575757","yellow":"#D75F00","white":"#444444","brightGreen":"#00AF5F","selectionForeground":"#EEEEEE","brightMagenta":"#AF87D7","brightWhite":"#A3A3A3","cyan":"#008787","brightRed":"#D70000","brightYellow":"#FF8700","brightBlue":"#0087AF","cursor":"#444444","cursorAccent":"#444444","background":"#EEEEEE","green":"#008700","selectionBackground":"#444444","brightCyan":"#00AFAF","magenta":"#8700AF"}' -t 'disableLeaveAlert=true' -t 'enableZmodem=true' -t 'enableTrzsz=true' -t 'enableSixel=true' -t 'cursorBlink=false' -t 'cursorInactiveStyle=underline' -t 'cursorStyle=block' /bin/login
+
+[Install]
+WantedBy=default.target

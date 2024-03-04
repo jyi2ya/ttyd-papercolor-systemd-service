@@ -1,0 +1,12 @@
+[Unit]
+Description=Share terminal over the web
+After = network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=60s
+ExecStart={{cmdline}}
+
+[Install]
+WantedBy=default.target

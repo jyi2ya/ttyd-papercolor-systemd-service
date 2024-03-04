@@ -1,0 +1,4 @@
+--cwd / # cwd for the child program
+--writable # allow clients to write to the TT
+# --ipv6
+-i lo
